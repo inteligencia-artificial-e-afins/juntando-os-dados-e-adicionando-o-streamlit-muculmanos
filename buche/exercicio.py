@@ -1,15 +1,11 @@
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup    
 from openpyxl import Workbook
 import requests
 import pandas as pd
 
-import pandas as pd
 url = "https://imobiliariaperez.com.br/alugar" # site para extrair
 response = requests.get(url) #request html
-
-
 soup = BeautifulSoup(response.content, 'html.parser') #configurao beautifulsoup
-
 myInfoArray = []
 
 links = soup.find_all('a',class_="slide-home-btn")
